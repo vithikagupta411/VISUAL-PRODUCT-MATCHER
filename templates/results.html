@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results • Visual Product Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">🔎 Visual Matcher</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="{{ url_for('index') }}">🏠 Home</a></li>
+        <li><a href="{{ url_for('about') }}">ℹ️ About</a></li>
+        <li><a href="{{ url_for('contact') }}">📬 Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Results</h1>
+    </header>
+
+    <section>
+      <h2>Your Image:</h2>
+      {% if query_img %}
+        <img src="{{ query_img }}" alt="Query image" class="query-img">
+      {% else %}
+        <p>(You uploaded a local file)</p>
+      {% endif %}
+    </section>
+
+    <section>
+      <h2>Similar Products</h2>
+      <div class="grid">
+        {% for r in results %}
+        <div class="card">
+          <img src="{{ r.image_url }}" alt="{{ r.name }}" class="product-img">
+          <h3>{{ r.name }}</h3>
+          <p class="category">{{ r.category }}</p>
+          <p class="score">Similarity: {{ r.score }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Visual Product Matcher • Built with Flask + PyTorch</p>
+  </footer>
+
+  <!-- JS for menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

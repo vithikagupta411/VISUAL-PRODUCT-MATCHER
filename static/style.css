@@ -1,0 +1,191 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2563eb, #1e3a8a);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.navbar .brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.navbar ul li a:hover {
+  color: #ffdd57;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Headings */
+h1, h2 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Flash Messages */
+.flash {
+  margin: 15px 0;
+}
+.flash-msg {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.flash-msg.error { background: #fee2e2; color: #991b1b; }
+.flash-msg.success { background: #dcfce7; color: #166534; }
+
+/* Cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  background: white;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Buttons */
+button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: linear-gradient(90deg, #1d4ed8, #1e3a8a);
+}
+
+/* Grid for results */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Images */
+.query-img {
+  max-width: 250px;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+}
+.product-img {
+  max-width: 160px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Categories & Scores */
+.category {
+  color: #666;
+  font-style: italic;
+}
+.score {
+  font-size: 0.9em;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* Divider */
+.divider {
+  margin: 15px 0;
+  text-align: center;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  font-size: 0.9em;
+}
+footer p {
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #2563eb;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+  }
+  .navbar ul.show {
+    display: flex;
+  }
+  .navbar ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About • Visual Product Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">🔎 Visual Matcher</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="{{ url_for('index') }}">🏠 Home</a></li>
+        <li><a href="{{ url_for('about') }}">ℹ️ About</a></li>
+        <li><a href="{{ url_for('contact') }}">📬 Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>About Visual Product Matcher</h1>
+    </header>
+
+    <section class="card">
+      <p>
+        The <b>Visual Product Matcher</b> is an AI-powered web application that finds visually similar products 
+        based on an uploaded image or an image URL.
+      </p>
+      <p>
+        🔹 It uses <b>deep learning embeddings</b> from a pretrained model to compare product images. <br>
+        🔹 The system stores product details in a database and performs similarity searches in real time. <br>
+        🔹 Built with <b>Flask</b>, <b>PyTorch</b>, and <b>OpenAI CLIP</b>.
+      </p>
+      <p>
+        This project demonstrates how computer vision can help e-commerce platforms 
+        provide better product discovery and recommendations.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Visual Product Matcher • Built with Flask + PyTorch</p>
+  </footer>
+
+  <!-- JS for menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

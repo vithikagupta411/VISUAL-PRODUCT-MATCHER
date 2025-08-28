@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Product Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">🔎 Visual Matcher</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="{{ url_for('index') }}">🏠 Home</a></li>
+        <li><a href="{{ url_for('about') }}">ℹ️ About</a></li>
+        <li><a href="{{ url_for('contact') }}">📬 Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Visual Product Matcher</h1>
+      <p>Upload an image or paste an image URL to find visually similar products.</p>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash">
+          {% for category, message in messages %}
+            <div class="flash-msg {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form class="card" action="{{ url_for('search') }}" method="POST" enctype="multipart/form-data">
+      <label>Upload Image:</label>
+      <input type="file" name="image" accept="image/*" />
+
+      <div class="divider">or</div>
+
+      <label>Image URL:</label>
+      <input type="url" name="url" placeholder="https://example.com/product.jpg" />
+
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Visual Product Matcher • Built with Flask + PyTorch</p>
+  </footer>
+
+  <!-- JS for menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

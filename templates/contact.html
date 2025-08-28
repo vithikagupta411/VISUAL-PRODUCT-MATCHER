@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact • Visual Product Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">🔎 Visual Matcher</div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="{{ url_for('index') }}">🏠 Home</a></li>
+        <li><a href="{{ url_for('about') }}">ℹ️ About</a></li>
+        <li><a href="{{ url_for('contact') }}">📬 Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Contact</h1>
+    </header>
+
+    <section class="card">
+      <p>If you’d like to connect, feel free to reach out:</p>
+      <p>
+        📧 Email: <b>vithikaguptaa411@gmail.com</b><br>
+        💼 LinkedIn: <a href="https://www.linkedin.com/in/vithika-gupta-328a61261" target="_blank">www.linkedin.com/in/vithika-gupta-328a61261</a><br>
+        💻 GitHub: <a href="https://github.com/vithikagupta411" target="_blank">github.com/vithikaguptaa411</a>
+      </p>
+      <p>
+        I’d be happy to discuss this project, collaborations, or any exciting opportunities!
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Visual Product Matcher • Built with Flask + PyTorch</p>
+  </footer>
+
+  <!-- JS for menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
