@@ -26,7 +26,7 @@ This project demonstrates how computer vision can be applied in e-commerce to im
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/visual-product-matcher.git
+   git clone https://github.com/vithikagupta411/visual-product-matcher.git
    cd visual-product-matcher
 Install dependencies:
 
