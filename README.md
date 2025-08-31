@@ -50,7 +50,7 @@ Copy code
 http://127.0.0.1:5000
 🌍 Deployment
 This project is deployed on Render.
-🔗 Live Link:[ Click Here]([https://visual-product-matcher-0gcu.onrender.com/])
+🔗 Live Link:[ [Click Here](https://visual-product-matcher-0gcu.onrender.com/)]([https://visual-product-matcher-0gcu.onrender.com/])
 
 👩‍💻 Author
 Vithika Gupta
